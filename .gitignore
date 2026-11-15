@@ -1,0 +1,52 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Cache directories (Gram target caches, thumbnails)
+.cache/
+styles/thumbs/
+styles/.cache/
+styles/_old/
+
+# Local IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated outputs
+outputs/
+*.png
+*.jpg
+*.jpeg
+!assets/samples/**
+!docs/images/**
+!styles/*.jpg
+!styles/*.webp
+!styles/*.png
+
+# Scripts (keep only documented benchmark and check scripts)
+scripts/*
+!scripts/benchmark.py
+!scripts/check_gpu.py
+
+# Internal verification notes
+docs/dev-notes/
+
+# Streamlit local state
+.streamlit/secrets.toml
+
+# Old sample experiments (must come after the !assets/samples/** rule)
+assets/samples/_old/

@@ -1,0 +1,20 @@
+Neural Canvas
+Copyright 2026 The Neural Canvas Authors
+
+This product includes software developed as part of:
+1. The TensorFlow Authors' Neural Style Transfer Tutorial (Apache License 2.0)
+   https://www.tensorflow.org/tutorials/generative/style_transfer
+   Copyright 2018 The TensorFlow Authors.
+
+2. Original Neural Style Transfer algorithm by Leon A. Gatys, Alexander S. Ecker,
+   and Matthias Bethge:
+   "A Neural Algorithm of Artistic Style", arXiv:1508.06576 (2015).
+   https://arxiv.org/abs/1508.06576
+
+3. Torchvision's pretrained VGG19 model with ImageNet-1K V1 weights:
+   https://pytorch.org/vision/stable/models/generated/torchvision.models.vgg19.html
+   Copyright (c) Soumith Chintala 2016, PyTorch contributors (BSD-3-Clause License).
+
+Neural Canvas provides a pure PyTorch implementation, modular library,
+preset and custom style management, Streamlit interactive web interface,
+unit tests, and optimization performance benchmarks.

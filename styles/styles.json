@@ -1,0 +1,237 @@
+[
+  {
+    "id": "a_sunday_afternoon_on_the_island_of_la_grande_jatte",
+    "name": "A Sunday Afternoon on the Island of La Grande Jatte",
+    "artist": "Georges Seurat",
+    "year": "1884-1886",
+    "credit": "Public Domain / Art Institute of Chicago",
+    "image_path": "styles\\A Sunday Afternoon on the Island of La Grande Jatte.webp",
+    "thumbnail_path": "styles\\thumbs\\a_sunday_afternoon_on_the_island_of_la_grande_jatte_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 100.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Outdoor parks, landscapes, architecture, and crowd portraits with optical pointillist color blending.",
+    "avoid_for": "Dark low-light scenes or sharp industrial machinery where divisionist dots soften hard mechanical edges.",
+    "style_group": "soft_atmospheric"
+  },
+  {
+    "id": "composition_vii_1913",
+    "name": "Composition VII",
+    "artist": "Wassily Kandinsky",
+    "year": "1913",
+    "credit": "Public Domain / Tretyakov Gallery",
+    "image_path": "styles\\Composition VII (1913).webp",
+    "thumbnail_path": "styles\\thumbs\\composition_vii_1913_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 90.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Composition_VII_-_Wassily_Kandinsky,_GAC.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Modern buildings, still lifes, abstract designs, and highly energetic geometric compositions.",
+    "avoid_for": "Photorealistic human portraits (intense abstract geometric forms heavily distort facial realism).",
+    "style_group": "ornamental"
+  },
+  {
+    "id": "impression_sunrise",
+    "name": "Impression, Sunrise",
+    "artist": "Claude Monet",
+    "year": "1872",
+    "credit": "Public Domain / Musée Marmottan Monet",
+    "image_path": "styles\\Impression, Sunrise.jpg",
+    "thumbnail_path": "styles\\thumbs\\impression_sunrise_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 120.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2",
+      "multi_crop_style": true,
+      "num_style_crops": 8,
+      "style_crop_exclude": [
+        0.5,
+        0.0,
+        0.88,
+        0.8
+      ],
+      "style_layer_weights": {
+        "conv1_1": 0.28,
+        "conv2_1": 0.25,
+        "conv3_1": 0.25,
+        "conv4_1": 0.17,
+        "conv5_1": 0.05
+      }
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monet_-_Impression,_Sunrise.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Seascapes, rivers, atmospheric sunsets, harbors, and misty landscapes.",
+    "avoid_for": "Crisp high-contrast technical diagrams or close-up fine line-art.",
+    "style_group": "soft_atmospheric"
+  },
+  {
+    "id": "sudden_shower_over_shin_ōhashi_bridge_and_atake",
+    "name": "Sudden Shower over Shin-Ōhashi Bridge and Atake",
+    "artist": "Utagawa Hiroshige",
+    "year": "1857",
+    "credit": "Public Domain / Brooklyn Museum",
+    "image_path": "styles\\Sudden Shower over Shin-Ōhashi Bridge and Atake.webp",
+    "thumbnail_path": "styles\\thumbs\\sudden_shower_over_shin_ōhashi_bridge_and_atake_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 80.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hiroshige,_Sudden_shower_over_Shin-%C5%8Chashi_bridge_and_Atake,_1857.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Bridges, architectural structures, rain/storm scenes, and graphic woodblock illustrations.",
+    "avoid_for": "Subtle gradient portraits where strong linear hatching might interfere with smooth skin tones.",
+    "style_group": "bold_graphic"
+  },
+  {
+    "id": "the_fighting_temeraire",
+    "name": "The Fighting Temeraire",
+    "artist": "J. M. W. Turner",
+    "year": "1838",
+    "credit": "Public Domain / National Gallery, London",
+    "image_path": "styles\\The Fighting Temeraire.webp",
+    "thumbnail_path": "styles\\thumbs\\the_fighting_temeraire_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 120.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Fighting_Temeraire,_JMW_Turner,_National_Gallery.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Atmospheric clouds, sunsets, marine scenes, rivers, and dramatic skies.",
+    "avoid_for": "Small detailed text or fine typography.",
+    "style_group": "soft_atmospheric"
+  },
+  {
+    "id": "the_great_wave_off_kanagawa",
+    "name": "The Great Wave off Kanagawa",
+    "artist": "Katsushika Hokusai",
+    "year": "1831",
+    "credit": "Public Domain / Tokyo National Museum",
+    "image_path": "styles\\The Great Wave off Kanagawa.jpg",
+    "thumbnail_path": "styles\\thumbs\\the_great_wave_off_kanagawa_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 80.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Great_Wave_off_Kanagawa2.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Dynamic waves, water landscapes, dramatic nature, mountains, and graphic posters.",
+    "avoid_for": "Soft impressionist blending where organic ink contour lines are unwanted.",
+    "style_group": "bold_graphic"
+  },
+  {
+    "id": "the_kiss",
+    "name": "The Kiss",
+    "artist": "Gustav Klimt",
+    "year": "1907-1908",
+    "credit": "Public Domain / Österreichische Galerie Belvedere",
+    "image_path": "styles\\The Kiss.jpg",
+    "thumbnail_path": "styles\\thumbs\\the_kiss_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 140.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Landscapes, architecture, nature, clothing, and objects with bold ornamental textures.",
+    "avoid_for": "Portraits and human faces (dense gold-leaf tesserae patterns cover facial details, mouths, and hands; not recommended for portraiture).",
+    "style_group": "ornamental"
+  },
+  {
+    "id": "the_scream",
+    "name": "The Scream",
+    "artist": "Edvard Munch",
+    "year": "1893",
+    "credit": "Public Domain / National Gallery, Oslo",
+    "image_path": "styles\\The Scream.jpg",
+    "thumbnail_path": "styles\\thumbs\\the_scream_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 90.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_The_Scream_-_Google_Art_Project.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Dramatic sky horizons, bridges, expressive emotion, and bold sweeping curves.",
+    "avoid_for": "Soft delicate pastel floristry or subtle low-contrast portraits.",
+    "style_group": "bold_graphic"
+  },
+  {
+    "id": "the_starry_night",
+    "name": "The Starry Night",
+    "artist": "Vincent van Gogh",
+    "year": "1889",
+    "credit": "Public Domain / Museum of Modern Art",
+    "image_path": "styles\\The Starry Night.jpg",
+    "thumbnail_path": "styles\\thumbs\\the_starry_night_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 90.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Night skies, landscapes, organic foliage, portraits, and expressive architecture.",
+    "avoid_for": "Clinical architectural blueprints requiring straight untextured parallel lines.",
+    "style_group": "bold_graphic"
+  },
+  {
+    "id": "wheatfield_with_cypresses",
+    "name": "Wheatfield with Cypresses",
+    "artist": "Vincent van Gogh",
+    "year": "1889",
+    "credit": "Public Domain / Metropolitan Museum of Art",
+    "image_path": "styles\\Wheatfield with Cypresses.jpg",
+    "thumbnail_path": "styles\\thumbs\\wheatfield_with_cypresses_thumb.jpg",
+    "recommended_weights": {
+      "content_weight": 100.0,
+      "style_weight": 100000.0,
+      "tv_weight": 0.05,
+      "style_scale_ratio": 1.0,
+      "content_layer": "conv4_2"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Wheat_Field_with_Cypresses_-_Google_Art_Project.jpg",
+    "license": "Public domain (PD-Art)",
+    "download_date": "2026-11-14",
+    "best_for": "Rural landscapes, trees, clouds, fields, and natural outdoor photography.",
+    "avoid_for": "Geometric industrial products or sharp angular typography.",
+    "style_group": "soft_atmospheric"
+  }
+]
