@@ -77,7 +77,7 @@ Derived from the empirical 100-step benchmark measurements above:
 | **Balanced** | 384 px | 400 | **~10.8 s** | **~7.7 min** | Default general-purpose stylization |
 | **High** | 512 px | 1000 | **~46.0 s** | **~31.6 min** | High-fidelity portfolio outputs & print quality |
 
-> **Note on Aspect Ratios:** The timing estimates above assume square canvas dimensions ($H = W = \text{max\_dim}$). Real-world photographs with typical landscape or portrait aspect ratios (e.g., 4:3, 16:9, 3:2) have fewer total pixels than square ($H \times W < \text{max\_dim}^2$), so their optimization finishes proportionally faster than these estimates.
+> **Note on Aspect Ratios:** The timing estimates above assume square canvases (height = width = `max_dim`). Real-world photographs with typical landscape or portrait aspect ratios (e.g., 4:3, 16:9, 3:2) have fewer total pixels than a square canvas (height × width < `max_dim`²), so their optimization finishes proportionally faster than these estimates.
 
 ### 💡 CPU Users: What to Expect
 Neural Canvas runs on CPU without any CUDA hardware, but 2D feature convolutions and Gram outer products require significant floating-point operations. On CPU:
