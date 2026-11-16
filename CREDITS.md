@@ -105,3 +105,25 @@ All preset style artworks in `styles/` are verified in the worldwide public doma
 - **Torchvision Pretrained VGG19 (ImageNet-1K V1 Weights):**  
   Pretrained convolutional feature representations provided by torchvision under the BSD-3-Clause License.  
   Documentation & Weights: [torchvision.models.vgg19](https://pytorch.org/vision/stable/models/generated/torchvision.models.vgg19.html) (Weights: `VGG19_Weights.IMAGENET1K_V1`).
+
+---
+
+## 🔤 Typography & Open Fonts
+
+All UI typography is served locally under permissive open-source font licenses:
+
+1. **Instrument Serif** (Regular)
+   - **Designers:** Rodrigo Fuenzalida, Jordan Wilson, Instrument
+   - **License:** [SIL Open Font License 1.1](app/static/fonts/InstrumentSerif-OFL.txt)
+   - **Source:** [Google Fonts Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) / [Instrument Serif GitHub](https://github.com/google/fonts/tree/main/ofl/instrumentserif)
+
+2. **IBM Plex Sans** (Regular 400, Medium 500)
+   - **Designers:** Mike Abbink, Bold Monday
+   - **License:** [SIL Open Font License 1.1](app/static/fonts/IBMPlexSans-OFL.txt)
+   - **Source:** [IBM Plex](https://github.com/IBM/plex) / [Google Fonts IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans)
+
+3. **IBM Plex Mono** (Regular 400)
+   - **Designers:** Mike Abbink, Bold Monday
+   - **License:** [SIL Open Font License 1.1](app/static/fonts/IBMPlexMono-OFL.txt)
+   - **Source:** [IBM Plex](https://github.com/IBM/plex) / [Google Fonts IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
+

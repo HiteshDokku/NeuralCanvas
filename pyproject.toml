@@ -26,7 +26,7 @@ dependencies = [
     "torchvision>=0.17.0",
     "pillow>=9.0.0",
     "numpy>=1.24.0",
-    "streamlit>=1.30.0",
+    "streamlit>=1.30.0",  # Tested with Streamlit 1.67.0
 ]
 
 [project.optional-dependencies]
@@ -58,3 +58,4 @@ ignore = ["B007", "B008", "E501"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+pythonpath = ["src", "."]

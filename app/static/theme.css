@@ -1,0 +1,1118 @@
+/* ==========================================================================
+   Neural Canvas Design System Stylesheet
+   Dark neutral palette, saffron accent (#D4A24C), 2px radius, zero shadows/glows.
+   Targeting Streamlit data-testid attributes for stable scoping.
+   ========================================================================== */
+
+/* 1. Viewport Fit & Page Scroll Lock: Prevents page-level scrollbars */
+html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], [data-testid="stMain"] {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    background-color: #131313 !important;
+    color: #E7E5E0 !important;
+}
+
+/* 2. Main Block & Columns: Independent Scroll Zones */
+[data-testid="stMainBlockContainer"] {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+[data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: hidden !important;
+    gap: 0 !important;
+}
+
+[data-testid="stMainBlockContainer"] > [data-testid="stVerticalBlock"] > [data-testid="stElementContainer"] {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Center Zone Container: Independent Scroll Container */
+[data-testid="stLayoutWrapper"]:has(> .st-key-nc-center) {
+    flex: 1 1 0px !important;
+    min-width: 0 !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    order: 1 !important;
+}
+
+.st-key-nc-center {
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #3A3A3A transparent !important;
+    scrollbar-gutter: stable !important;
+    padding: 0.5rem 1.25rem 16px 1.25rem !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    flex: 1 1 auto !important;
+}
+
+/* Right Settings Panel: Resizable & Independent Scroll Container */
+[data-testid="stLayoutWrapper"]:has(> .st-key-nc-settings) {
+    flex: 0 0 300px !important;
+    width: 300px !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    order: 2 !important;
+}
+
+.st-key-nc-settings {
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #3A3A3A transparent !important;
+    scrollbar-gutter: stable !important;
+    padding: 0.5rem 1rem 16px 1rem !important;
+    box-sizing: border-box !important;
+    background-color: #1A1A1A !important;
+    border-left: 1px solid #2A2A2A !important;
+    width: 100% !important;
+    position: relative !important;
+    flex: 1 1 auto !important;
+}
+
+/* WebKit Scrollbars for all 3 Zones */
+[data-testid="stSidebarContent"]::-webkit-scrollbar,
+.st-key-nc-center::-webkit-scrollbar,
+.st-key-nc-settings::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+[data-testid="stSidebarContent"]::-webkit-scrollbar-thumb,
+.st-key-nc-center::-webkit-scrollbar-thumb,
+.st-key-nc-settings::-webkit-scrollbar-thumb {
+    background: #3A3A3A;
+    border-radius: 2px;
+}
+[data-testid="stSidebarContent"]::-webkit-scrollbar-track,
+.st-key-nc-center::-webkit-scrollbar-track,
+.st-key-nc-settings::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Right Panel Resizer Handle */
+.nc-resize-handle {
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 6px;
+    height: 100%;
+    cursor: col-resize;
+    z-index: 999;
+    user-select: none;
+}
+.nc-resize-handle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2px;
+    width: 1px;
+    height: 100%;
+    background-color: #2A2A2A;
+    transition: background-color 150ms ease;
+}
+.nc-resize-handle:hover::before,
+.nc-resize-handle.dragging::before {
+    background-color: #D4A24C;
+}
+
+/* 3. Streamlit Header & Footer: Suppresses default top menu and footer */
+header[data-testid="stHeader"] {
+    display: none !important;
+}
+footer {
+    display: none !important;
+}
+
+/* 4. Left Rail (Sidebar): Resizable, dark surface #1A1A1A, sticky footer */
+[data-testid="stSidebar"] {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    overflow: visible !important;
+    background-color: #1A1A1A !important;
+    border-right: 1px solid #2A2A2A !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stSidebarContent"],
+[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
+    padding-bottom: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #3A3A3A transparent !important;
+    scrollbar-gutter: stable !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    padding-top: 0.75rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
+    min-height: calc(100dvh - 88px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] > div {
+    min-height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"]:not(.st-key-nc-rail-content):not(.st-key-nc-rail-dock) {
+    min-height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    gap: 0 !important;
+}
+
+.st-key-nc-rail-content {
+    flex: 1 0 auto !important;
+    padding: 0 0.75rem 96px 0.75rem !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+/* Sidebar Toggle Collapse Button: Hidden to keep left rail docked */
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
+}
+
+/* Sidebar Resize Handle: Visible and responsive to drag events */
+[data-testid="stSidebarResizeHandle"] {
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+/* Sidebar Element Spacing */
+[data-testid="stSidebar"] [data-testid="stElementContainer"] {
+    margin-bottom: 4px !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] {
+    min-height: 0 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    overflow: visible !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p {
+    font-size: 12px !important;
+    font-family: "IBM Plex Sans", sans-serif !important;
+    line-height: 1.5 !important;
+    color: #E7E5E0 !important;
+    overflow: visible !important;
+    margin-bottom: 0 !important;
+}
+
+/* Sidebar Section Labels: Never clipped, 14px top gap, 8px gap below */
+.sidebar-section-label {
+    font-family: "IBM Plex Sans", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #E7E5E0 !important;
+    line-height: 1.5 !important;
+    padding-bottom: 4px !important;
+    margin-top: 14px !important;
+    margin-bottom: 8px !important;
+    overflow: visible !important;
+    display: block !important;
+}
+
+/* Protect Material Symbols icons across the entire app */
+[data-testid="stIconMaterial"],
+[data-testid="stIconMaterial"] *,
+span[data-testid="stIconMaterial"] {
+    font-family: "Material Symbols Rounded", "Material Symbols Outlined", "Material Icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    line-height: 1 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    word-wrap: normal !important;
+    white-space: nowrap !important;
+    direction: ltr !important;
+}
+
+/* Compact 1-row uploader in sidebar (empty dropzone state) */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] section:not(:has([data-testid="stFileChips"])) {
+    padding: 4px 8px !important;
+    min-height: 36px !important;
+    height: auto !important;
+    max-height: 48px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background-color: #131313 !important;
+    border: 1px dashed #3A3A3A !important;
+    border-radius: 2px !important;
+    box-sizing: border-box !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] section:not(:has([data-testid="stFileChips"])) button {
+    padding: 2px 8px !important;
+    font-size: 12px !important;
+    height: 26px !important;
+    min-height: 26px !important;
+    line-height: 22px !important;
+    background-color: #262626 !important;
+    border: 1px solid #3A3A3A !important;
+    color: #E7E5E0 !important;
+    border-radius: 2px !important;
+    flex-shrink: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] small,
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzoneInstructions"] span:not([data-testid="stIconMaterial"]) {
+    font-size: 11px !important;
+    color: #8C8C86 !important;
+    font-family: "IBM Plex Mono", monospace !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    display: block !important;
+}
+
+/* Uploaded State: Dropzone container becomes normal flow container without dashed border */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] section:has([data-testid="stFileChips"]) {
+    padding: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    background: transparent !important;
+    border: none !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] section:has([data-testid="stFileChips"]) > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* File Chips Container */
+[data-testid="stSidebar"] [data-testid="stFileChips"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileChips"] > div,
+[data-testid="stSidebar"] [data-testid="stFileChips"] > div > div {
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+/* File Chip: Flex row (thumbnail | name + size | remove button) */
+[data-testid="stSidebar"] [data-testid="stFileChip"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    padding: 4px 8px !important;
+    background-color: #1A1A1A !important;
+    border: 1px solid #2A2A2A !important;
+    border-radius: 2px !important;
+    box-sizing: border-box !important;
+    gap: 8px !important;
+}
+
+/* 1. Thumbnail */
+[data-testid="stSidebar"] [data-testid="stFileChip"] > div:first-child {
+    flex: 0 0 28px !important;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #262626 !important;
+    border-radius: 2px !important;
+    overflow: hidden !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileChip"] > div:first-child svg {
+    display: block !important;
+    width: 16px !important;
+    height: 16px !important;
+    fill: #8C8C86 !important;
+    color: #8C8C86 !important;
+}
+
+/* 2. Name + Size Container */
+[data-testid="stSidebar"] [data-testid="stFileChip"] > div:nth-child(2) {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 1px !important;
+    overflow: hidden !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileChip"] [data-testid="stFileChipName"] {
+    font-family: "IBM Plex Sans", sans-serif !important;
+    font-size: 12px !important;
+    color: #E7E5E0 !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+    display: block !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileChip"] > div:nth-child(2) > div:last-child {
+    font-family: "IBM Plex Mono", monospace !important;
+    font-size: 11px !important;
+    color: #8C8C86 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+}
+
+/* 3. Remove Button */
+[data-testid="stSidebar"] [data-testid="stFileChipDeleteBtn"] {
+    flex: 0 0 24px !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileChipDeleteBtn"] button {
+    width: 24px !important;
+    height: 24px !important;
+    min-height: 24px !important;
+    max-height: 24px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 2px !important;
+    color: #8C8C86 !important;
+    cursor: pointer !important;
+    transition: background-color 100ms ease, color 100ms ease !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileChipDeleteBtn"] button:hover {
+    background-color: #262626 !important;
+    color: #E7E5E0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileChipDeleteBtn"] svg {
+    display: block !important;
+    width: 14px !important;
+    height: 14px !important;
+    fill: currentColor !important;
+    color: inherit !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileChipDeleteBtn"] [data-testid="stIconMaterial"] {
+    display: inline-block !important;
+    font-family: "Material Symbols Rounded", "Material Symbols Outlined", "Material Icons" !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    color: inherit !important;
+}
+
+/* 4. Add Button ("+") with normal spacing below the chip */
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button[data-testid="stBaseButton-borderlessIcon"] {
+    align-self: flex-start !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 26px !important;
+    min-height: 26px !important;
+    padding: 2px 8px !important;
+    background-color: #1A1A1A !important;
+    border: 1px solid #2A2A2A !important;
+    border-radius: 2px !important;
+    color: #8C8C86 !important;
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+    cursor: pointer !important;
+    transition: background-color 100ms ease, border-color 100ms ease, color 100ms ease !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button[data-testid="stBaseButton-borderlessIcon"]:hover {
+    background-color: #262626 !important;
+    border-color: #3A3A3A !important;
+    color: #E7E5E0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stFileUploader"] button[data-testid="stBaseButton-borderlessIcon"] [data-testid="stIconMaterial"] {
+    font-family: "Material Symbols Rounded", "Material Symbols Outlined", "Material Icons" !important;
+    font-size: 16px !important;
+    color: inherit !important;
+    display: inline-block !important;
+}
+
+/* Sidebar Device Line: Mono, above button, ellipsis if needed */
+.sidebar-device-line {
+    font-family: "IBM Plex Mono", monospace !important;
+    font-size: 11px !important;
+    color: #8C8C86 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.3 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Pinned Dock Container: Always flush at bottom edge with #131313 surface */
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+    gap: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stLayoutWrapper"]:has(> .st-key-nc-rail-dock) {
+    margin-top: auto !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 999 !important;
+    width: 100% !important;
+    background-color: #131313 !important;
+    border-top: 1px solid #2A2A2A !important;
+    box-sizing: border-box !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stVerticalBlock"].st-key-nc-rail-dock,
+.st-key-nc-rail-dock {
+    padding: 8px 12px 10px 12px !important;
+    background-color: #131313 !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.st-key-nc-rail-dock [data-testid="stElementContainer"] {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.st-key-nc-rail-dock [data-testid="stMarkdownContainer"] {
+    margin-bottom: 0 !important;
+}
+
+.st-key-nc-rail-dock button {
+    margin: 0 !important;
+    z-index: auto !important;
+    transform: none !important;
+}
+
+/* 5. Typography Scale Enforcement: 11, 12, 14, 16, 30 px */
+.rail-title-block {
+    margin-top: 4px !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 4px !important;
+}
+
+.font-title {
+    font-family: "Instrument Serif", serif !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+    color: #E7E5E0 !important;
+    margin: 0 0 4px 0 !important;
+}
+
+.font-tagline {
+    font-family: "IBM Plex Sans", sans-serif !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    color: #8C8C86 !important;
+    margin: 0 !important;
+}
+
+.font-body {
+    font-family: "IBM Plex Sans", sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    color: #E7E5E0 !important;
+}
+
+.font-mono {
+    font-family: "IBM Plex Mono", monospace !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: #8C8C86 !important;
+}
+
+.font-muted {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: #8C8C86 !important;
+}
+
+/* 6. Primary Stylize Button: Pinned saffron accent (#D4A24C) with #131313 text */
+button[kind="primary"], [data-testid="stBaseButton-primary"] {
+    background-color: #D4A24C !important;
+    color: #131313 !important;
+    font-family: "IBM Plex Sans", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border: none !important;
+    border-radius: 2px !important;
+    padding: 0.45rem 1rem !important;
+    transition: opacity 100ms ease-in-out !important;
+    box-shadow: none !important;
+}
+
+button[kind="primary"]:hover, [data-testid="stBaseButton-primary"]:hover {
+    background-color: #D4A24C !important;
+    opacity: 0.9 !important;
+    color: #131313 !important;
+    box-shadow: none !important;
+}
+
+/* 7. Secondary Buttons: Dark surface #1A1A1A with #2A2A2A border */
+button[kind="secondary"], [data-testid="stBaseButton-secondary"] {
+    background-color: #1A1A1A !important;
+    color: #E7E5E0 !important;
+    font-family: "IBM Plex Sans", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    border: 1px solid #2A2A2A !important;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+    transition: background-color 100ms ease-in-out, border-color 100ms ease-in-out !important;
+}
+
+button[kind="secondary"]:hover, [data-testid="stBaseButton-secondary"]:hover {
+    background-color: #262626 !important;
+    border-color: #3A3A3A !important;
+    color: #E7E5E0 !important;
+}
+
+/* 8. Segmented Control: Active option uses #E7E5E0 background with #131313 text */
+[data-testid="stSegmentedControl"],
+[data-testid="stButtonGroup"] {
+    border: 1px solid #3A3A3A !important;
+    border-radius: 2px !important;
+    background-color: #1A1A1A !important;
+    padding: 2px !important;
+}
+
+[data-testid="stSegmentedControl"] button,
+[data-testid="stButtonGroup"] button {
+    border-radius: 2px !important;
+    font-family: "IBM Plex Sans", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    color: #8C8C86 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 3px 8px !important;
+}
+
+[data-testid="stSegmentedControl"] button[aria-selected="true"],
+[data-testid="stSegmentedControl"] button[aria-checked="true"],
+[data-testid="stSegmentedControl"] button[data-selected="true"],
+[data-testid="stButtonGroup"] button[aria-selected="true"],
+[data-testid="stButtonGroup"] button[aria-checked="true"],
+[data-testid="stButtonGroup"] button[data-selected="true"] {
+    background-color: #E7E5E0 !important;
+    color: #131313 !important;
+    font-weight: 500 !important;
+}
+
+[data-testid="stSegmentedControl"] button[aria-selected="true"] *,
+[data-testid="stSegmentedControl"] button[aria-checked="true"] *,
+[data-testid="stSegmentedControl"] button[data-selected="true"] *,
+[data-testid="stButtonGroup"] button[aria-selected="true"] *,
+[data-testid="stButtonGroup"] button[aria-checked="true"] *,
+[data-testid="stButtonGroup"] button[data-selected="true"] * {
+    color: #131313 !important;
+}
+
+/* 9. Dense Style List: 28px single-line rows with thumbnails */
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] {
+    gap: 2px !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadioOption"] {
+    display: flex !important;
+    align-items: center !important;
+    height: 28px !important;
+    min-height: 28px !important;
+    max-height: 28px !important;
+    padding: 0 4px !important;
+    margin: 0 !important;
+    border-radius: 2px !important;
+    border-left: 2px solid transparent !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadioOption"] > label,
+[data-testid="stSidebar"] [data-testid="stRadioOption"] > div {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    flex: 1 1 auto !important;
+}
+
+/* Hide default circular radio input */
+[data-testid="stSidebar"] [data-testid="stRadioOption"] > div > div:first-child {
+    display: none !important;
+}
+
+/* Single line text with ellipsis */
+[data-testid="stSidebar"] [data-testid="stRadioOption"] [data-testid="stMarkdownContainer"] {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadioOption"] [data-testid="stMarkdownContainer"] p {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-size: 12px !important;
+    line-height: 28px !important;
+    margin: 0 !important;
+    color: #E7E5E0 !important;
+    min-width: 0 !important;
+}
+
+/* Selected row saffron accent bar */
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div[data-selected="true"] [data-testid="stRadioOption"],
+[data-testid="stSidebar"] [data-testid="stRadioOption"][data-selected="true"],
+[data-testid="stSidebar"] [data-testid="stRadioOption"]:has(input:checked) {
+    background-color: #262626 !important;
+    border-left: 2px solid #D4A24C !important;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadioOption"]:hover {
+    background-color: #1F1F1F !important;
+}
+
+/* 28x28 Thumbnails via ::before pseudo-element */
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(1) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/a_sunday_afternoon_on_the_island_of_la_grande_jatte_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(2) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/composition_vii_1913_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(3) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/impression_sunrise_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(4) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/sudden_shower_over_shin_ōhashi_bridge_and_atake_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(5) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/the_fighting_temeraire_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(6) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/the_great_wave_off_kanagawa_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(7) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/the_kiss_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(8) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/the_scream_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(9) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/the_starry_night_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(10) [data-testid="stRadioOption"]::before {
+    content: ""; display: inline-block; width: 28px; height: 28px; min-width: 28px;
+    background-image: url("/app/static/thumbs/wheatfield_with_cypresses_thumb.jpg");
+    background-size: cover; border-radius: 2px; margin-right: 8px;
+}
+[data-testid="stSidebar"] [data-testid="stRadioGroup"] > div:nth-child(11) [data-testid="stRadioOption"]::before {
+    content: "+"; display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; min-width: 28px;
+    background: #262626; border: 1px solid #3A3A3A; border-radius: 2px; margin-right: 8px;
+    font-family: "IBM Plex Mono", monospace; font-size: 14px; color: #8C8C86;
+}
+
+/* 10. Center Header & Right-Aligned Readout */
+.result-header-title {
+    font-family: "Instrument Serif", serif !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+    line-height: 36px !important;
+    color: #E7E5E0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header-status-text {
+    font-family: "IBM Plex Mono", monospace !important;
+    font-size: 12px !important;
+    line-height: 36px !important;
+    color: #8C8C86 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* 11. 3px Accent Progress Track */
+.progress-track-3px {
+    width: 100%;
+    height: 3px;
+    background-color: #2A2A2A;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4px;
+    border-radius: 1px;
+}
+
+.progress-bar-determinate {
+    height: 3px;
+    background-color: #D4A24C;
+    transition: width 100ms linear;
+}
+
+.progress-bar-indeterminate {
+    height: 3px;
+    background-color: #D4A24C;
+    position: absolute;
+    width: 30%;
+    animation: nc-indeterminate 1.2s linear infinite;
+}
+
+@keyframes nc-indeterminate {
+    0% {
+        left: -30%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .progress-bar-indeterminate {
+        animation: none !important;
+        left: 0 !important;
+        width: 100% !important;
+        opacity: 0.5 !important;
+    }
+}
+
+/* 12. Center Result Plate: Main Viewport Container */
+.result-plate {
+    position: relative;
+    background-color: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    border-radius: 2px;
+    height: clamp(320px, calc(100dvh - 350px), 900px) !important;
+    min-height: 320px !important;
+    max-height: 900px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+@media (max-height: 700px) {
+    .result-plate {
+        height: clamp(300px, calc(100dvh - 280px), 900px) !important;
+        min-height: 300px !important;
+    }
+}
+
+.result-image-contain {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 2px;
+    display: block;
+    margin: auto;
+}
+
+/* 13. Bottom Strip: Reference Previews (160x120), Downloads, and History */
+.bottom-strip-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 6px;
+    border-top: 1px solid #2A2A2A;
+    margin-top: 4px;
+}
+
+.ref-previews-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.ref-tile-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ref-tile-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    color: #8C8C86;
+    line-height: 1.2;
+}
+
+.ref-tile-box {
+    width: 160px;
+    height: 120px;
+    min-width: 160px;
+    background-color: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ref-tile-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 2px;
+}
+
+.ref-tile-caption {
+    font-family: "IBM Plex Mono", monospace !important;
+    font-size: 12px !important;
+    color: #8C8C86 !important;
+    line-height: 1.3 !important;
+    max-width: 160px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
+}
+
+.ref-tile-guidance {
+    font-size: 12px;
+    color: #8C8C86;
+    line-height: 1.3;
+    max-width: 240px;
+    margin-top: 2px;
+}
+
+.ref-divider {
+    width: 1px;
+    height: 140px;
+    background-color: #2A2A2A;
+    align-self: stretch;
+}
+
+.history-strip-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.history-tiles-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.history-thumb-box {
+    width: 64px;
+    height: 48px;
+    min-width: 64px;
+    background-color: #1A1A1A;
+    border: 1px solid #2A2A2A;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history-thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-height: 700px) {
+    .ref-tile-box {
+        width: 120px !important;
+        height: 90px !important;
+        min-width: 120px !important;
+    }
+    .ref-tile-caption {
+        max-width: 120px !important;
+    }
+    .ref-divider {
+        height: 110px !important;
+    }
+}
+
+/* 14. Right Settings Panel: Hyperparameter technical workbench */
+.settings-panel {
+    background-color: #1A1A1A;
+    border-left: 1px solid #2A2A2A;
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+
+.group-mono-header {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: #8C8C86;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid #2A2A2A;
+    padding-bottom: 2px;
+}
+
+/* 15. Hairline Dividers: Clean 1px dividers without margins */
+hr {
+    border: none !important;
+    border-top: 1px solid #2A2A2A !important;
+    margin: 0.35rem 0 !important;
+}
+
+/* 16. Inputs & Sliders Styling: 2px corners, #3A3A3A borders, #D4A24C focus */
+input, select, textarea {
+    border: 1px solid #3A3A3A !important;
+    border-radius: 2px !important;
+    background-color: #131313 !important;
+    color: #E7E5E0 !important;
+    font-family: "IBM Plex Sans", sans-serif !important;
+    font-size: 12px !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #D4A24C !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+[data-testid="stSlider"] div[role="slider"] {
+    background-color: #D4A24C !important;
+    border: 2px solid #131313 !important;
+    box-shadow: none !important;
+}

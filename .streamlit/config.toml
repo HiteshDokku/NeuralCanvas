@@ -1,13 +1,48 @@
 [server]
 headless = true
 fileWatcherType = "none"
+enableStaticServing = true
 
 [browser]
 gatherUsageStats = false
 
+[client]
+toolbarMode = "minimal"
+
 [theme]
-primaryColor = "#6366F1"
-backgroundColor = "#0F172A"
-secondaryBackgroundColor = "#1E293B"
-textColor = "#F8FAFC"
-font = "sans serif"
+base = "dark"
+primaryColor = "#D4A24C"
+backgroundColor = "#131313"
+secondaryBackgroundColor = "#1A1A1A"
+textColor = "#E7E5E0"
+borderColor = "#2A2A2A"
+showWidgetBorder = true
+baseRadius = "2px"
+buttonRadius = "2px"
+font = "IBM Plex Sans"
+headingFont = "Instrument Serif"
+codeFont = "IBM Plex Mono"
+
+[[theme.fontFaces]]
+family = "Instrument Serif"
+url = "app/static/fonts/InstrumentSerif-Regular.ttf"
+weight = "400"
+style = "normal"
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans"
+url = "app/static/fonts/IBMPlexSans-Regular.woff2"
+weight = "400"
+style = "normal"
+
+[[theme.fontFaces]]
+family = "IBM Plex Sans"
+url = "app/static/fonts/IBMPlexSans-Medium.woff2"
+weight = "500"
+style = "normal"
+
+[[theme.fontFaces]]
+family = "IBM Plex Mono"
+url = "app/static/fonts/IBMPlexMono-Regular.woff2"
+weight = "400"
+style = "normal"
