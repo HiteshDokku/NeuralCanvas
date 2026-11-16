@@ -7,7 +7,10 @@ import re
 import sys
 from pathlib import Path
 
-import tomllib
+try:
+    import tomllib  # Python 3.11+
+except ModuleNotFoundError:  # Python 3.10
+    import tomli as tomllib
 from streamlit.testing.v1 import AppTest
 
 repo_root = Path(__file__).resolve().parent.parent
