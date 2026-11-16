@@ -50,3 +50,4 @@ docs/dev-notes/
 
 # Old sample experiments (must come after the !assets/samples/** rule)
 assets/samples/_old/
+scratch/
